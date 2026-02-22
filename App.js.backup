@@ -1,0 +1,33 @@
+import React, { useState } from 'react';
+
+function App() {
+  const [formData, setFormData] = useState({
+    model_name: 'iPhone 13',
+    ram: 4,
+    memory: 128,
+    is_used: true
+  });
+  const [prediction, setPrediction] = useState(null);
+
+  const getPrediction = async () => {
+    const response = await fetch('http://localhost:8000/predict', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+    const data = await response.json();
+    setPrediction(data.price); // Display result to user [cite: 195]
+  };
+
+  return (
+    <div className="App">
+      <h1>Sri Lankan iPhone Price Predictor</h1>
+      {/* Create select/input elements to update formData */}
+      <button onClick={getPrediction}>Predict Price</button>
+      {prediction && <h2>Estimated Price: Rs. {prediction.toLocaleString()}</h2>}
+    </div>
+  );
+}
+
+
+python -m uvicorn main:app --reload

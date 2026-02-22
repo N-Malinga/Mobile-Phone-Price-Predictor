@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  # The FastAPI Machine Learning Service
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+
+  # The React User Interface Service
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    stdin_open: true # Required for React to keep running in Docker
+    environment:
+      - CHOKIDAR_USEPOLLING=true # Enables hot-reloading in Docker
+    depends_on:
+      - backend
