@@ -20,15 +20,16 @@ Ensure you have **Docker Desktop** installed on your machine.
    ```bash
    git clone <your-repo-link>
    cd iphone-price-predictor
+   ```
 
 2. **Launch the application using Docker**:
-    ```bash
-    docker-compose up --build
+   ```bash
+   docker-compose up --build
+   ```
 
 3. **Access the system**:
-
-    Frontend UI: http://localhost:3000
-    API Documentation: http://localhost:8000/docs
+   - **Frontend UI**: http://localhost:3000
+   - **API Documentation**: http://localhost:8000/docs
 
 ## Project Structure
 
