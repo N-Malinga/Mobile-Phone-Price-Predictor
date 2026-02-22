@@ -22,7 +22,7 @@ Ensure you have **Docker Desktop** installed on your machine.
    cd iphone-price-predictor
 
 2. **Launch the application using Docker**:
-
+    ```bash
     docker-compose up --build
 
 3. **Access the system**:
