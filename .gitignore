@@ -1,0 +1,22 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# Node.js
+node_modules/
+frontend/node_modules/
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Model artifacts (optional: keep these if your lecturer needs to run it immediately)
+# !backend/*.pkl
